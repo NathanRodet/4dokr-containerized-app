@@ -1,0 +1,28 @@
+
+version: "3.9"
+services:
+  website:
+    build:
+      context: ./website
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./index.php:/var/www/html/index.php
+    environment:
+      - USERNAME=fake_username
+      - PASSWORD=fake_password
+    depends_on:
+      - simple_api
+  simple_api:
+    build:
+      context: ./simple_api
+      dockerfile: Dockerfile
+    environment:
+      - FLASK_APP=app.py
+    command: flask run --host=0.0.0.0
+    volumes:
+      data:
+
+volumes:
+  data:
