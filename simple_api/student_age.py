@@ -1,4 +1,5 @@
 #!flask/bin/python
+from markupsafe import escape
 from flask import Flask, jsonify
 from flask import abort
 from flask import make_response

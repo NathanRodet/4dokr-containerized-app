@@ -1,15 +1,23 @@
-FROM alpine:latest
+FROM ubuntu:20.04
 
-LABEL description = "Serve a simple website with nginx"
+ENV DEBIAN_FRONTEND noninteractive
+
+LABEL description = "Serve a simple website with apache2"
 LABEL maintainer = "Rodet Nathan <rodetnathan.contact@gmail.com>"
 
-RUN apk update && apk add nginx
+RUN apt-get update && apt-get install -y apache2
+RUN mkdir -p /var/www/html
 
-COPY index.php /var/www/localhost/htdocs/index.php
+COPY index.php /var/www/html/
+
+ENV PASSWORD=toto
+ENV USERNAME=python
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["apachectl", "-D", "FOREGROUND"]
 
-# docker build -t mon-image-nginx ./website
-# docker run -p 80:80 website
+# docker build -t website ./website
+# docker run --name website -p 80:80 website
+
+# Pas à jour
