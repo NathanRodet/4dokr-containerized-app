@@ -1,3 +1,3 @@
-# supinfo-4DOKR OR supinfo-3DOKR
+# supinfo-4dokr OR supinfo-3dokr
 
-3DOKR Exam
+4dokr Exam
