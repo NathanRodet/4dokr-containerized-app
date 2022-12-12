@@ -1,28 +1,25 @@
-
 version: "3.9"
 services:
+
   website:
-    build:
-      context: ./website
-      dockerfile: Dockerfile
+    container_name: website
+    image: php:7.2-apache
     ports:
       - "80:80"
     volumes:
-      - ./index.php:/var/www/html/index.php
+      - ./website:/var/www/html
     environment:
-      - USERNAME=fake_username
-      - PASSWORD=fake_password
+      - USERNAME=toto
+      - PASSWORD=python
     depends_on:
       - simple_api
+
   simple_api:
+    container_name: simple_api
     build:
       context: ./simple_api
       dockerfile: Dockerfile
-    environment:
-      - FLASK_APP=app.py
-    command: flask run --host=0.0.0.0
-    volumes:
-      data:
+    ports:
+      - 5000:5000
 
-volumes:
-  data:
+# docker-compose up -d
