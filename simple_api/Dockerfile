@@ -20,3 +20,7 @@ CMD ["python", "/student_age.py"]
 # docker build -t simple_api ./simple_api
 # docker run --name simple_api -d -p 5000:5000 simple_api 
 # curl -u toto:python -X GET http://127.0.0.1:5000/pozos/api/v1.0/get_student_ages
+
+# docker container rm simple_api -f
+# docker volume prune
+
