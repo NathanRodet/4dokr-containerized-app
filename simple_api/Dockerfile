@@ -23,4 +23,3 @@ CMD ["python", "/student_age.py"]
 
 # docker container rm simple_api -f
 # docker volume prune
-

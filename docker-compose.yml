@@ -3,14 +3,13 @@ services:
 
   website:
     container_name: website
-    image: php:7.2-apache
+    image: php:apache
     ports:
       - "80:80"
     volumes:
       - ./website:/var/www/html
-    environment:
-      - USERNAME=toto
-      - PASSWORD=python
+    env_file:
+      - .env
     depends_on:
       - simple_api
 
@@ -21,5 +20,3 @@ services:
       dockerfile: Dockerfile
     ports:
       - 5000:5000
-
-# docker-compose up -d
