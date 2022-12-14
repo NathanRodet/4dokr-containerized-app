@@ -25,7 +25,6 @@ def get_password(username):
 def unauthorized():
     return make_response(jsonify({'error': 'Unauthorized access'}), 401)
 
-
 try:
     student_age_file_path
     student_age_file_path  = os.environ['student_age_file_path'] 
