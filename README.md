@@ -1,4 +1,4 @@
-# supinfo-4dokr OR supinfo-3dokr
+# supinfo-4DOKR OR supinfo-3DOKR
 
 ## Launch backend api (simple_api)
 
