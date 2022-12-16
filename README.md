@@ -22,6 +22,10 @@ docker container rm simple_api -f
 docker volume prune
 ```
 
+##
+
+When you update the index.php url, don't miss the point that your localhost will not work. Docker have an intern localhost and you will need to pass the backend container name instead so it can be automatically recognized.
+
 ## Launch docker-compose.yml
 
 ```
