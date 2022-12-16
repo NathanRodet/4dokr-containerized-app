@@ -28,3 +28,7 @@ docker volume prune
 docker compose up
 docker compose down
 ```
+
+## To get local registry
+
+Just tag your image and push it
