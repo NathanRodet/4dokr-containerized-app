@@ -29,3 +29,7 @@ docker compose down
 ## To get local registry
 
 Just tag your image and push it
+```
+docker image tag <name> localhost:5000/<name>
+docker image push localhost:5000/<name>
+```
