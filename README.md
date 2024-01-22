@@ -1,4 +1,4 @@
-# supinfo-4DOKR OR supinfo-3DOKR
+# 4dokr - Containerized application
 
 ## Launch backend api (simple_api)
 
